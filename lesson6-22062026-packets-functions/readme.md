@@ -90,3 +90,12 @@ func funcName[T any](value T) {
 func Swap[T1, T2 any](a T1, b T2) (T2, T1) {
     return b,a
 }
+
+type Point[T any] strunc{
+    X T
+    Y T
+}
+
+func main() {
+    
+}
