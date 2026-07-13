@@ -14,8 +14,8 @@ var (
 )
 
 const (
-	lightSquare = "\033[47;30m"              // белый фон, чёрный текст
-	darkSquare  = "\033[48;2;208;135;50;97m" // оранжевый фон, белый текст
+	lightSquare = "\033[47;30m"
+	darkSquare  = "\033[48;2;208;135;50;97m"
 	resetColor  = "\033[0m"
 )
 
@@ -73,8 +73,6 @@ func placePieces(board [][]string) {
 	placeBackRank(board[0], blackBackRank)
 	placeBackRank(board[size-1], whiteBackRank)
 
-	// На маленьком поле ряды пешек могут совпасть с уже занятыми рядами.
-	// В таком случае лишние фигуры не добавляются.
 	placePawns(board, 1, "♟")
 	placePawns(board, size-2, "♙")
 }
@@ -128,8 +126,6 @@ func printBoard(board [][]string, whitePlayer, blackPlayer string) {
 	}
 }
 
-// columnName преобразует номер столбца в шахматную координату:
-// 0 -> A, 25 -> Z, 26 -> AA и так далее.
 func columnName(column int) string {
 	name := ""
 	for column >= 0 {
